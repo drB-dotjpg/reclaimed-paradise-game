@@ -1,6 +1,9 @@
+var player = new Player();
+var camera = new Camera();
+
 var objects = {
-    player: new Player(),
-    camera: new Camera()
+    player: player,
+    camera: camera
 };
 
 function setup() {
