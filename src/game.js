@@ -1,4 +1,7 @@
-var player = new Player();
+var objects = {
+    player: new Player(),
+    camera: new Camera()
+};
 
 function setup() {
     createCanvas(1280, 720);
@@ -6,6 +9,8 @@ function setup() {
 
 function draw() {
     background(220);
-    player.update();
-    player.draw();
+    for (const property in objects) {
+        objects[property].update();
+        objects[property].draw();
+    }
 }

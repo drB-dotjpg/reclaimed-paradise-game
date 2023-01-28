@@ -22,31 +22,31 @@ class Player {
     }
     
     keyDown (event) {
-        if (event.key === "ArrowUp") {
+        if (event.key === "w") {
             this.yVelocity = -this.speed;
         }
-        if (event.key === "ArrowDown") {
+        if (event.key === "s") {
             this.yVelocity = this.speed;
         }
-        if (event.key === "ArrowLeft") {
+        if (event.key === "a") {
             this.xVelocity = -this.speed;
         }
-        if (event.key === "ArrowRight") {
+        if (event.key === "d") {
             this.xVelocity = this.speed;
         }
     }
 
     keyUp (event) {
-        if (event.key === "ArrowUp") {
+        if (event.key === "w") {
             this.yVelocity = 0;
         }
-        if (event.key === "ArrowDown") {
+        if (event.key === "s") {
             this.yVelocity = 0;
         }
-        if (event.key === "ArrowLeft") {
+        if (event.key === "a") {
             this.xVelocity = 0;
         }
-        if (event.key === "ArrowRight") {
+        if (event.key === "d") {
             this.xVelocity = 0;
         }
     }
