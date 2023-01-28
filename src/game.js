@@ -1,13 +1,16 @@
 var player = new Player();
+var plant = new Plant();
 var camera = new Camera();
 
 var objects = {
     player: player,
-    camera: camera
+    camera: camera,
+    plant: plant
 };
 
 function setup() {
     createCanvas(1280, 720);
+    loadImages();
 }
 
 function draw() {
