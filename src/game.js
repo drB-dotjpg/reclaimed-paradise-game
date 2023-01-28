@@ -6,5 +6,6 @@ function setup() {
 
 function draw() {
     background(220);
+    player.update();
     player.draw();
 }

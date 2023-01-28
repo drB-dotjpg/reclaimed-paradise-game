@@ -1,29 +1,53 @@
 class Player {
-    constuctor () {
-        this.x = 600;
-        this.y = 600;
+    constructor () {
+        this.x = 1280/2;
+        this.y = 720/2;
         this.width = 50;
-        this.height = 50;
         this.speed = 5;
+        this.xVelocity = 0;
+        this.yVelocity = 0;
+
+        document.addEventListener("keydown", this.keyDown.bind(this));
+        document.addEventListener("keyup", this.keyUp.bind(this));
+    }
+
+    update () {
+        this.x += this.xVelocity;
+        this.y += this.yVelocity;
     }
 
     draw () {
         fill(255, 0, 0);
-        rect(this.x, this.y, this.width, this.height);
+        circle(this.x, this.y, this.width);
     }
     
-    update () {
-        if (keyIsDown(LEFT_ARROW)) {
-            this.x -= this.speed;
+    keyDown (event) {
+        if (event.key === "ArrowUp") {
+            this.yVelocity = -this.speed;
         }
-        if (keyIsDown(RIGHT_ARROW)) {
-            this.x += this.speed;
+        if (event.key === "ArrowDown") {
+            this.yVelocity = this.speed;
         }
-        if (keyIsDown(UP_ARROW)) {
-            this.y -= this.speed;
+        if (event.key === "ArrowLeft") {
+            this.xVelocity = -this.speed;
         }
-        if (keyIsDown(DOWN_ARROW)) {
-            this.y += this.speed;
+        if (event.key === "ArrowRight") {
+            this.xVelocity = this.speed;
+        }
+    }
+
+    keyUp (event) {
+        if (event.key === "ArrowUp") {
+            this.yVelocity = 0;
+        }
+        if (event.key === "ArrowDown") {
+            this.yVelocity = 0;
+        }
+        if (event.key === "ArrowLeft") {
+            this.xVelocity = 0;
+        }
+        if (event.key === "ArrowRight") {
+            this.xVelocity = 0;
         }
     }
 }
