@@ -5,11 +5,7 @@ class Camera {
     }
 
     update() {
-        this.x = player.x - width / 2;
-        this.y = player.y - height / 2;
-    }
-
-    draw() {
-        translate(-this.x, -this.y);
+        this.x = ((objects.player.x - width / 2)+this.x*20)/21;
+        this.y = ((objects.player.y - height / 2)+this.y*20)/21;
     }
 }

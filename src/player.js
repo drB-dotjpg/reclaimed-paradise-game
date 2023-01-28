@@ -16,9 +16,9 @@ class Player {
         this.y += this.yVelocity;
     }
 
-    draw () {
+    draw (camera) {
         fill(255, 0, 0);
-        circle(this.x, this.y, this.width);
+        circle(this.x , this.y, this.width);
     }
     
     keyDown (event) {

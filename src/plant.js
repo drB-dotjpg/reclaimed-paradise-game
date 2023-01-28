@@ -9,4 +9,7 @@ class Plant {
         // url is img/leaf.png
         image(images["leaf0"].img, 0, 0);
     }
+    update(){
+        
+    }
 }
