@@ -20,16 +20,5 @@ function draw() {
         objects[property].update();
         objects[property].draw(camera);
     }
-    console.log(cam.x, cam.y);
     cam.update();
-
-    //draw a grid 
-    for (let i = 0; i < width; i += 100) {
-        for (let j = 0; j < height; j += 100) {
-            stroke(0);
-            strokeWeight(1);
-            line(i, 0, i, height);
-            line(0, j, width, j);
-        }
-    }
 }
