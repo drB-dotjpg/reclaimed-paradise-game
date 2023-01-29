@@ -1,12 +1,16 @@
 var heatMap = [[],[]];
 var humidityMap = [[],[]];
 
+var worldMap;
 var objects;
 var player, cam;
 
 function setup() {
     createCanvas(1280, 720);
     loadImages();
+
+    worldMap = new Map();
+
     //load map noise
     for (let x = 0; x < worldMap.width; x+=10) {
         heatMap[x/10] = [];
@@ -44,6 +48,8 @@ function draw() {
             rect(x, y, 100, 100);
         }
     }
+
+    colorMode(RGB);
 
     for (const property in objects) {
         objects[property].update();
