@@ -28,7 +28,7 @@ function setup() {
         player: player,
     };
 
-    for(let i = 0; i<50; i++) {
+    for(let i = 0; i<100; i++) {
         objects["plant"+i] = new Plant(Math.random()*worldMap.width, Math.random()*worldMap.height);
     }
 }
@@ -53,7 +53,7 @@ function draw() {
 
     for (const property in objects) {
         objects[property].update();
-        objects[property].draw(camera);
+        if(Math.sqrt(Math.pow(player.x-objects[property].x, 2) + Math.pow(player.y-objects[property].y, 2)) < 2000) objects[property].draw(camera);
     }
 
     cam.update();
