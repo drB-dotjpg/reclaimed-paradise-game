@@ -1,9 +1,9 @@
 class Player {
     constructor () {
-        this.x = 1280/2;
-        this.y = 720/2;
+        this.x = worldMap.width / 2;
+        this.y = worldMap.height / 2;
         this.width = 50;
-        this.speed = 5;
+        this.speed = 10;
         this.xVelocity = 0;
         this.yVelocity = 0;
 
