@@ -29,7 +29,7 @@ function setup() {
     };
 
     for(let i = 0; i<50; i++) {
-        objects["plant"+i] = new Plant(Math.random()*1000, Math.random()*1000);
+        objects["plant"+i] = new Plant(Math.random()*worldMap.width, Math.random()*worldMap.height);
     }
 }
 

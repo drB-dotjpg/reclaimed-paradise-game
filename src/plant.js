@@ -48,7 +48,6 @@ class Plant {
             let x = Math.sin(this.offset+this.frame*this.wiggleSpeed+i/this.height*0.7*Math.PI)*this.waviness*this.height*Math.atan(i/10) + this.x;
 
             line(lastX, lastY, x, y);
-            
 
             if(i > Math.abs(this.leafs[leafcount])) {
                 //console.log(i/this.height, this.leafs[leafdraws.length])
