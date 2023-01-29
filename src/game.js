@@ -1,15 +1,8 @@
-var worldMap = new Map();
-var player = new Player();
-var plant = new Plant();
-var cam = new Camera();
-
 var heatMap = [[],[]];
 var humidityMap = [[],[]];
 
-var objects = {
-    player: player,
-    plant: plant
-};
+var objects;
+var player, cam;
 
 function setup() {
     createCanvas(1280, 720);
@@ -22,6 +15,16 @@ function setup() {
             heatMap[x/10][y/10] = worldMap.getMapNoise(x, y);
             humidityMap[x/10][y/10] = worldMap.getMapNoise(x - worldMap.width, y - worldMap.height);
         }
+
+    player = new Player();
+    cam = new Camera();
+
+    objects = {
+        player: player,
+    };
+
+    for(let i = 0; i<50; i++) {
+        objects["plant"+i] = new Plant(Math.random()*1000, Math.random()*1000);
     }
 }
 
