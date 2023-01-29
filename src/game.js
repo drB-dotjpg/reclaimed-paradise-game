@@ -15,6 +15,7 @@ function setup() {
             heatMap[x/10][y/10] = worldMap.getMapNoise(x, y);
             humidityMap[x/10][y/10] = worldMap.getMapNoise(x - worldMap.width, y - worldMap.height);
         }
+    }
 
     player = new Player();
     cam = new Camera();
