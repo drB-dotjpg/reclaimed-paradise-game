@@ -1,16 +1,20 @@
-var player = new Player();
-var plant = new Plant();
-var cam = new Camera();
-
-var objects = {
-    player: player,
-    plant: plant
-};
+var player, cam;
+var objects;
 
 function setup() {
     createCanvas(1280, 720);
-
     loadImages();
+
+    player = new Player();
+    cam = new Camera();
+
+    objects = {
+        player: player,
+    };
+
+    for(let i = 0; i<50; i++) {
+        objects["plant"+i] = new Plant(Math.random()*1000, Math.random()*1000);
+    }
 }
 
 function draw() {
