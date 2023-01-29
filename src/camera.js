@@ -1,7 +1,7 @@
 class Camera {
     constructor() {
-        this.x = 0;
-        this.y = 0;
+        this.x = worldMap.width/2;
+        this.y = worldMap.height/2;
     }
 
     update() {
